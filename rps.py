@@ -13,10 +13,8 @@ def decide_winner(user_choice, computer_choice):
     print("Computer selecting...")
     sleep(1)
     print("The computer has chosen: %s" % computer_choice)
-    #TODO: Validate for answers not within the options array
     user_choice_index = options.index(user_choice)
     computer_choice_index = options.index(computer_choice)
-
 
 #winning scenarios
     if user_choice_index == computer_choice_index:
@@ -36,11 +34,16 @@ def decide_winner(user_choice, computer_choice):
 #actual gameplay
 def play_RPS():
     print("Time to play Rock, Paper, Scissors. As you know, Rock beats Scissors, Paper beats Rock, and Scissors beats Paper.")
-    user_input = raw_input("Take your pick- Rock, Paper, or Scissors? ")
-    user_choice = user_input[:1].upper()
-    #TODO: Validate for answers that start with R, P, or S but which are not in the array
-    sleep(1)
-    computer_choice = options[randint(0, (len(options) - 1))]
+    user_choice = raw_input("Take your pick- Rock, Paper, or Scissors? ").upper()
+    #TODO: DONE. Validate for answers that start with R, P, or S but which are not in the array
+    #TODO: DONE. Validate for answers not within the options array
+    if user_choice in options:
+        sleep(1)
+        computer_choice = options[randint(0, (len(options) - 1))]
+        decide_winner(user_choice, computer_choice)
+    else:
+        print("I'm sorry, that is not a valid choice. Please play again.")
+        return
 
-    decide_winner(user_choice, computer_choice)
+#play game
 play_RPS()
