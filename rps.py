@@ -25,7 +25,7 @@ def decide_winner(user_choice, computer_choice):
         print(WIN_MSG)
     elif user_choice_index == 2 and computer_choice_index == 0:
         print(WIN_MSG)
-    elif user_choice_index > 2:
+    elif user_choice_index >= len(options):
         print("Your answer is garbage and you should feel like garbage.")
         return
     else:
