@@ -3,16 +3,16 @@
 from random import randint
 from time import sleep
 
-options = ["R", "P", "S"]
+options = ["ROCK", "PAPER", "SCISSORS"]
 WIN_MSG = "Congratulations! You beat the computer."
 LOSE_MSG = "The computer wins! You lose!"
 
 def decide_winner(user_choice, computer_choice):
     print("You selected: %s" % user_choice)
-    #TODO: Ensure that whole word prints instead of just first letter
+    #TODO: DONE. Ensure that whole word prints instead of just first letter
     print("Computer selecting...")
     sleep(1)
-    print("The computer has chosen %s" % computer_choice)
+    print("The computer has chosen: %s" % computer_choice)
     #TODO: Validate for answers not within the options array
     user_choice_index = options.index(user_choice)
     computer_choice_index = options.index(computer_choice)
